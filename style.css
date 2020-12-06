@@ -68,18 +68,18 @@ textarea{
 }
 
 /* added */
-/* .past, .present, .future {
+.past, .present, .future {
   border: 3px ridge;
   border-left-color: black;
   border-top-color: #8f8e8e;
   border-bottom-color: #8f8e8e;
   border-right-color: #8f8e8e;
-} */
+}
 
 /* added */
-/* .present:focus, .past:focus, .future:focus {
+.present:focus, .past:focus, .future:focus {
   outline: 1px solid #0da3fa;
-} */
+}
 
 .saveBtn {
   border-left: 1px solid black;
@@ -90,12 +90,12 @@ textarea{
 }
 
 /* added */
-/* .saveBtn:focus {
+.saveBtn:focus {
   border: 2px solid red;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   outline: none;
-} */
+}
 
 .saveBtn i:hover {
   font-size: 20px;
