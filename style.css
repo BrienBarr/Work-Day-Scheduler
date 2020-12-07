@@ -91,9 +91,9 @@ textarea{
 
 /* added */
 .saveBtn:focus {
-  border: 2px solid red;
+  /* border: 2px solid red;
   border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
+  border-bottom-right-radius: 15px; */
   outline: none;
 }
 
