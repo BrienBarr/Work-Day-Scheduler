@@ -4,6 +4,9 @@ $(document).ready(function() {
     var currTime = moment().format('h');
     currTime = parseInt(currTime);
     var currTimeA = moment().format('a');
+    if(currTime === 12 && currTimeA === "am"){
+        currTime = 0;
+    }
     
     function checkTime (){
         var timer = setInterval(function(){
@@ -12,6 +15,9 @@ $(document).ready(function() {
         currTimeA = moment().format('a');
         if(currTimeA === "pm"){
             currTime += 12;
+        }
+        else if(currTime === 12 && currTimeA === "am"){
+            currTime = 0;
         }
         console.log(currTime);
         hourNoteClass();
