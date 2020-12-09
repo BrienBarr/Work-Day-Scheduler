@@ -8,7 +8,7 @@ In this homework assignment, I was tasked to create a simple calendar applicatio
 
 I was told to meet the following acceptance criteria.
 
-```
+
 1. When the planner is opened, the current day is displayed at the top of the calendar.
 1. When the user scrolls down, he/she is presented with time blocks for standard business hours.
 1. When the time blocks are viewed for that day, each time block is color-coded to show if it is
@@ -17,7 +17,7 @@ in the past, present, or future based on the current hour
 1. When the save button is clicked for a time block, the text for the event for that time block is
 saved into local storage
 1. When the planner is refreshed, the save events persist
-```
+
 
 ## Mock-Up
 
