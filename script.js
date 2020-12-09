@@ -100,7 +100,8 @@ $(document).ready(function() {
 
         // Create the new save button with the font-awesome save icon and give it a value 
         // for the hour of the time-block row
-        var newHrSave = $("<button class='col-1 saveBtn'> <i class='fas fa-save'></i>").attr("value", timeHour);
+        //var newHrSave = $("<button class='col-1 saveBtn'> <i class='fas fa-save'></i>").attr("value", timeHour);
+        var newHrSave = $("<button class='col-1 saveBtn'> <i class='fas fa-save'></i>");
         
         // Append the time-block row with the hour block, the textarea for notes, and the save button
         newTimeBlock.append(newHour, newHrTxt, newHrSave);
@@ -112,7 +113,7 @@ $(document).ready(function() {
 
     // On click event callback function to save the time-block text notes from the textarea in the row
     // to local storage when the save button or font-awesome save icon is clicked
-    $(".saveBtn, .fa-save").click(function(event){
+    $(".saveBtn").click(function(event){
         event.preventDefault();
         event.stopPropagation();
         var txtNoteVal = $(this).parent().attr("value");
