@@ -21,7 +21,7 @@ $(document).ready(function() {
             currTime = parseInt(currTime);
             currTimeA = moment().format('a');
             // if statement to change hours after 12PM to 24 hour clock
-            if(currTime > 12 && currTimeA === "pm"){
+            if(currTimeA === "pm" && currTime !== 12){
                 currTime += 12;
             }
             // else if statement to change 12AM to zero hour on 24 hour clock
@@ -49,23 +49,27 @@ $(document).ready(function() {
             tiimeHour = i - 12;
         }
 
-        // Set the time-block row value to the time hour
-        newTimeBlock.attr("value", timeHour);
-
         var timeText;
+        var timeNoteID;
 
-        // if statement to set the time text for the time-block rows for 1-5 PM
+        // if statement to set the time text and time note ID  for the time-block rows for 1-5 PM
         if (i > 12) {
             timeText = "" + timeHour-12 + " PM";
+            timeNoteID = "" + timeHour-12 + "_PM";
         }
-        // else if statement to set the time text for the 12 PM time-block row
+        // else if statement to set the time text and time note ID  for the 12 PM time-block row
         else if (i === 12) {
             timeText = "" + timeHour + " PM";
+            timeNoteID = "" + timeHour + "_PM";
         }
-        // else statement to set the time text for the 9-11 AM time-block rows
+        // else statement to set the time text and time note ID for the 9-11 AM time-block rows
         else{
-            timeText = "" + timeHour + "AM";
+            timeText = "" + timeHour + " AM";
+            timeNoteID = "" + timeHour + "_AM";
         }
+
+         // Set the time-block row value to the time note ID
+         newTimeBlock.attr("value", timeNoteID);
 
         // Display the time text in the timeTextSpan span element
         var timeTextSpan = $("<span  class='hourDisplay'>").text(timeText);
@@ -74,20 +78,20 @@ $(document).ready(function() {
         var newHour = $("<div class='col-1 hour'>").html(timeTextSpan);
 
         // Create the textarea for the user to add notes for each hour block
-        // and give it an ID and value based on the time hour
-        var newHrTxt = $("<textarea class='col-10 hourNote'>").attr("id", timeHour + "_Note"); 
+        // and give it an ID based on the time Note ID and a value based on the time hour
+        var newHrTxt = $("<textarea class='col-10 hourNote'>").attr("id", timeNoteID + "_Note"); 
         newHrTxt.attr("value", timeHour);
 
         // Get the notes for the textarea that are stored in the local storage
-        var timeNote = localStorage.getItem($(newHrTxt).attr("value") + "_Note");
+        var timeNoteTxt = localStorage.getItem($(newHrTxt).attr("id"));
 
         // if statement to check if the time note in local storage is null
-        if (!timeNote){
+        if (!timeNoteTxt){
 
         }
         // else statement to set the text in the textarea with the time note stored in local storage
         else{
-            newHrTxt.text(timeNote);
+            newHrTxt.text(timeNoteTxt);
         }
 
         // Call the function to check the current hour to set the class for the textarea 
@@ -107,8 +111,8 @@ $(document).ready(function() {
     }
 
     // On click event callback function to save the time-block text notes from the textarea in the row
-    // to local storage when the font-awesome save icon is clicked
-    $(".fa-save").click(function(event){
+    // to local storage when the save button or font-awesome save icon is clicked
+    $(".saveBtn, .fa-save").click(function(event){
         event.preventDefault();
         event.stopPropagation();
         var txtNoteVal = $(this).parent().attr("value");

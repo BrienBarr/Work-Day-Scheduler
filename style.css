@@ -87,6 +87,7 @@ textarea{
   border-top-color: #8f8e8e;
   border-bottom-color: #8f8e8e;
   border-right-color: #8f8e8e;
+  /* border-right: none; */
 }
 
 /* Added styling for the past, present, and future class items pseudo focus class */
@@ -103,19 +104,14 @@ textarea{
   color: white;
 }
 
-/* Added styling for the saveBtn class items pseudo focus class */
-.saveBtn:focus {
-  outline: none;
-}
-
 /* Styling for the i elements' pseudo hover class contained withing saveBtn class items */
-.saveBtn i:hover {
+.saveBtn:hover > i {
   font-size: 20px;
   transition: all .3s ease-in-out;
   color:black;
 }
 
-/* Added styling for the font-awesome save icon class items pseudo hover class */
-.fa-save:hover{
-  color:black;
+/* Added styling for the saveBtn class items pseudo focus class */
+.saveBtn:focus {
+  outline: none;
 }
