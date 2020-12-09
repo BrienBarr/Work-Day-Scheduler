@@ -1,9 +1,11 @@
+/* Styling for the body element */
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 1;
 }
 
+/* Styling for textarea elements */
 textarea{
   background: transparent;
   border: none;
@@ -13,6 +15,7 @@ textarea{
   padding: 10px;
 }
 
+/* Styling for the Bootstrap jumbotron class */
 .jumbotron {
   text-align: center;
   background-color: transparent;
@@ -21,53 +24,63 @@ textarea{
   border-bottom: 10px solid black;
 }
 
+/* Styling for the description class items */
 .description{
   white-space: pre-wrap;
 }
 
+/* Styling for the time-block class items */
 .time-block{
   text-align: center;
   border-radius: 15px;
 }
 
+/* Styling for Bootstrap row class items */
 .row {
   white-space: pre-wrap;
   height: 80px;
   border-top: 1px solid white;;
 }
 
+/* Styling for hour class items */
 .hour {
   background-color: #ffffff;
   color: #000000;
   border-top: 1px dashed #000000;
 }
 
-/* Added */
+/* Added styling for the hourDisplay class items to display the time for each time-block row */
 .hourDisplay {
   margin-top: 20%;
   margin-right: 2px;
   float: right;
 }
 
+/*  Styling for the past class items to show time-block textarea elements 
+    in the past relative to the current hour */
 .past {
   background-color: #d3d3d3;
 
   color: black;
 }
 
+/*  Styling for the present class items to show time-block textarea elements 
+    in the present relative to the current hour */
 .present {
   background-color: #ff6961;
   
   color: black;  
 }
 
+/*  Styling for the past class items to show time-block textarea elements 
+    in the future relative to the current hour */
 .future {
   background-color: #77dd77;
   
   color: black;
 }
 
-/* added */
+/* Added styling for the past, present, and future class items */
 .past, .present, .future {
   border: 3px ridge;
   border-left-color: black;
@@ -76,11 +89,12 @@ textarea{
   border-right-color: #8f8e8e;
 }
 
-/* added */
+/* Added styling for the past, present, and future class items pseudo focus class */
 .present:focus, .past:focus, .future:focus {
   outline: 1px solid #0da3fa;
 }
 
+/* Styling for the saveBtn class items */
 .saveBtn {
   border-left: 1px solid black;
   border-top-right-radius: 15px;
@@ -89,22 +103,19 @@ textarea{
   color: white;
 }
 
-/* added */
+/* Added styling for the saveBtn class items pseudo focus class */
 .saveBtn:focus {
-  /* border: 2px solid red;
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px; */
   outline: none;
 }
 
+/* Styling for the i elements' pseudo hover class contained withing saveBtn class items */
 .saveBtn i:hover {
   font-size: 20px;
   transition: all .3s ease-in-out;
-  
   color:black;
 }
 
-/* added */
+/* Added styling for the font-awesome save icon class items pseudo hover class */
 .fa-save:hover{
   color:black;
 }
